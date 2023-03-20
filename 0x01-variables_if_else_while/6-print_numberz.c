@@ -10,8 +10,10 @@ int main(void)
 
 	n=0;
 	while (n < 10)
+	{
 		putchar(n+48);
 		n++;
+	}
 	putchar('\n');
 	return (0);
 }

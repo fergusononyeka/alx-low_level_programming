@@ -5,10 +5,17 @@
  */
 int main(void)
 {
-	for (int i=97; i<=122; i++)
+	int i;
+	int j;
+
+	for (i=97; i<=122; i++)
+	{
 		putchar(i);
-	for (int j=65; j<=90; j++)
+	}
+	for (j=65; j<=90; j++)
+	{
 		putchar(j);
+	}
 	putchar('\n')
 	return (0);
 }
