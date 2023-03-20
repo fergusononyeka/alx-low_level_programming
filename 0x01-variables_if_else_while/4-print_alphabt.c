@@ -6,11 +6,11 @@
 
 int main(void)
 {
-	int i=97;
+	int i = 97;
 
-	while (i <=122)
+	while (i <= 122)
 	{
-		if ((i == 113) || (i ==101))
+		if ((i == 113) || (i == 101))
 		{
 			continue;
 			putchar(i);

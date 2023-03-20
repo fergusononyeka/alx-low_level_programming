@@ -6,13 +6,12 @@
 
 int main(void)
 {
-	int n;
+	int Num = 0;
 
-	n=0;
-	while (n < 10)
+	while (Num < 10)
 	{
-		putchar(n+48);
-		n++;
+		putchar(Num + 48);
+		Num++;
 	}
 	putchar('\n');
 	return (0);

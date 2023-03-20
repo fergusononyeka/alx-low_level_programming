@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - Entry point
- * Retrurn: Always 0 (Success)
+ * Return: Always 0 (Success)
  */
 
 int main(void)
@@ -13,7 +13,7 @@ int main(void)
 	{
 		putchar(i);
 	}
-	for (j = 97;j <= 102; j++)
+	for (j = 97; j <= 102; j++)
 	{
 		putchar(j);
 	}
