@@ -1,0 +1,8 @@
+Task 1: Summamary
+1. create a main.h file and include all fuction prototype
+2. create the functions that the prototypes are contained in the main.h, ending with .c extension
+run the command ( gcc -c *.c) to convert all .c to object files
+run (ar rcs libmy.a) to create your library called libmy.a
+run (ar rcs libmy.a *.o ) to copy all .o files into your library libmy.a
+then run (ar -t libmy.a) to test. it will listout every file in your library
+then run (nm libmy.a) , if it runs well, then all is correct
