@@ -1,26 +1,36 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * create_array - create array of size size and assign char c
- * @size: size of array
- * @c: char to initialize all array index
- * Description: create array of size size and assign char c
- * Return: pointer to array, NULL if fail
- *
+ * alloc_grid - nested loop to make grid
+ * @width: width input array
+ * @height: height input array
+ * Return: pointer to 2 dimimensional array
  */
-char *create_array(unsigned int size, char c)
+int **alloc_grid(int width, int height)
 {
-	char *arr;
-	unsigned int i;
+	int **tdarr;
+	int a, b;
 
-	arr = malloc(sizeof(char) * size);/* Allocates memory */
-	if (size == 0 || arr == NULL)
+	if (width <= 0 || height <= 0)
 		return (NULL);
-/* Assigns char c to each index of the arr */
-	for (i = 0; i < size; i++)
+	tdarr = malloc(sizeof(tdarr) * height);/* Allocates memory */
+	if (tdarr == NULL)
+		return (NULL);
+	for (a = 0; a < height; a++)
 	{
-		arr[i] = c;
+		tdarr[a] = malloc(sizeof(int) * width);
+		if (tdarr[a] == NULL)
+		{
+			for (; a >= 0; a--)
+				free(tdarr[a]);
+			free(tdarr);
+			return (NULL);
+		}
 	}
-	return (arr);
-	free(arr);/* free allocated memory */
+	for (a = 0; a < height; a++)
+	{
+		for (b = 0; b < width; b++)
+			tdarr[a][b] = 0;
+	}
+	return (tdarr);
 }
