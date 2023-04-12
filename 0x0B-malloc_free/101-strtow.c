@@ -1,26 +1,25 @@
-#include "main.h"
 #include <stdlib.h>
-/**
- * create_array - create array of size size and assign char c
- * @size: size of array
- * @c: char to initialize all array index
- * Description: create array of size size and assign char c
- * Return: pointer to array, NULL if fail
- *
- */
-char *create_array(unsigned int size, char c)
-{
-	char *arr;
-	unsigned int i;
+#include "main.h"
 
-	arr = malloc(sizeof(char) * size);/* Allocates memory */
-	if (size == 0 || arr == NULL)
-		return (NULL);
-/* Assigns char c to each index of the arr */
-	for (i = 0; i < size; i++)
+/**
+ * count_word - helper function to count the number of words in a string
+ * @s: string to evaluate
+ *
+ * Return: number of words
+ */
+int count_word(char *s)
+{
+	int flag = 0, count, word = 0;
+
+	for (count = 0; s[count] != '\0'; count++)
 	{
-		arr[i] = c;
+		if (s[count] == ' ')
+			flags = 0;
+		else if (flags == 0)
+		{
+			flags = 1;
+			word++;
+		}
 	}
-	return (arr);
-	free(arr);/* free allocated memory */
+	return (word);
 }
