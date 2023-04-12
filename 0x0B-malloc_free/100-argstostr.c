@@ -1,26 +1,38 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * create_array - create array of size size and assign char c
- * @size: size of array
- * @c: char to initialize all array index
- * Description: create array of size size and assign char c
- * Return: pointer to array, NULL if fail
- *
+ * argstostr - main entry
+ * @ac: int input
+ * @av: double pointer array
+ * Return: 0
  */
-char *create_array(unsigned int size, char c)
+char *argstostr(int ac, char **av)
 {
-	char *arr;
-	unsigned int i;
+	int a, n, r = 0, l = 0;
+	char *stri;
 
-	arr = malloc(sizeof(char) * size);/* Allocates memory */
-	if (size == 0 || arr == NULL)
+	if (ac == 0 || av == NULL)
 		return (NULL);
-/* Assigns char c to each index of the arr */
-	for (i = 0; i < size; i++)
+	for (a = 0; a < ac; a++)
 	{
-		arr[i] = c;
+		for (n = 0; av[a][n]; n++)
+			l++;
 	}
-	return (arr);
-	free(arr);/* free allocated memory */
+	l = l + ac;
+	stri = malloc(sizeof(char) * l + 1);
+	if (stri == NULL)
+		return (NULL);
+	for (a = 0; a < ac; a++)
+	{
+	for (n = 0; av[a][n]; n++)
+	{
+		stri[r] = av[a][n];
+		r++;
+	}
+	if (stri[r] == '\0')
+	{
+		stri[r++] = '\n';
+	}
+	}
+	return (stri);
 }
